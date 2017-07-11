@@ -3,6 +3,10 @@
 
 module.exports = function(input){
 return `
-componente: ${input}
+export const ${input}Component = {
+    controller: ${input}Ctrl,
+    controllerAs: '${input}',
+    template: ${input}.component.html
+}
 `
 };
