@@ -1,12 +1,12 @@
-//var input = "nombre";
-//var componente = ;
-
 module.exports = function(input){
 return `
+import ${input}Ctrl from './${input}.ctrl.js';
+
 export const ${input}Component = {
     controller: ${input}Ctrl,
     controllerAs: '${input}',
-    template: ${input}.component.html
-}
+    template: './partials/${input}.component.html'
+};
+
 `
 };
