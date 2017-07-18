@@ -19,7 +19,6 @@ program
       fs.mkdir(path.join(__dirname, `/src/js/components/${name}Component`), function(err){
         if(err)throw err;
         console.log(`Folder ${name}Component created successfully!!`);
-
         fs.appendFile(`${__dirname}/src/js/components/${name}Component/${name}.component.js`, componentTemplate, (err)=>{
           if(err)throw err;
           console.log(`File: ${name}.component.js created successfully!!`);
@@ -28,9 +27,13 @@ program
           if(err)throw err;
           console.log(`File: ${name}.ctrl.js created successfully!!`);
         });
-        fs.appendFile(`${__dirname}/public/partials/${name}.component.html`, viewTemplate, (err)=>{
+        fs.mkdir(path.join(__dirname, `/public/partials/${name}`), function(err){
           if(err)throw err;
-          console.log(`File: ${name}.component.html created successfully!!`);
+          console.log(`Folder ${name} created successfully!!`);
+          fs.appendFile(`${__dirname}/public/partials/${name}/${name}.component.html`, viewTemplate, (err)=>{
+            if(err)throw err;
+            console.log(`File: ${name}.component.html created successfully!!`);
+          });
         });
       });
     }
