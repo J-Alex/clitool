@@ -33,7 +33,6 @@ class ${input}Service {
         return this.$http({ method: "GET", url: \`/${input}/\${id}\` })
             .then( res => res.data )
             .catch( err => console.log(err) );
-        }
     }
 }
 
